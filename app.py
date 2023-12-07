@@ -3,6 +3,10 @@ import pandas as pd
 import keys 
 import pytz
 from rsi import rsi
+from matplotlib import pyplot as plt
+import seaborn as sns
+import numpy as np
+
 
 # API key/secret are required for user data endpoints
 client = Spot(keys.API_KEY, keys.SECRET_KEY)
@@ -21,7 +25,6 @@ ema200 = df["close"][:-1].ewm(span=200, adjust=False).mean()
 #ema200 = df["close"][:-1].ewm(span=200, adjust=False).mean()
 #prsi = df['close'].astype(float)
 df_close = df['close'].astype(float)
-
 
 
 
@@ -50,6 +53,7 @@ def entradas(dfClose, ema200, ema25):
                 entry = df_close[i + 2]
                 stop_loss = ema200[i + 1]
                 profit = entry + (entry - stop_loss)
+                plt.scatter(i + 2, entry, color='orange')
                 print('trade entry: ' + str(entry) + ' stop loss: ' + str(stop_loss) + ' profit: ' + str(profit))
                
 
@@ -67,6 +71,21 @@ def entradas(dfClose, ema200, ema25):
 
 
     print(count)
+    
+############################## grafico #######################################
+# Utilizar seaborn para configurar el estilo
+sns.set_theme(style='darkgrid')
+
+# Datos de ejemplo
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Crear y mostrar el gráfico
+plt.plot(x, y)
+plt.title('Gráfico con estilo seaborn-darkgrid')
+plt.show()
+
+plt.plot(ema25,color='blue')    
 
 ############################## output ##########################################
 #print(ema25)
