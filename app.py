@@ -13,7 +13,7 @@ import numpy as np
 client = Spot(keys.API_KEY, keys.SECRET_KEY)
 
 ############################## data ##########################################
-candles = client.klines("BTCUSDT", "5m", limit=100)
+candles = client.klines("BTCUSDT", "5m", limit=500)
 
 df= pd.DataFrame(candles, columns =['date', 'open', 'high', 'low', 'close', 'volume','a','b','c','d','e','f'])
 df['date'] = pd.to_datetime(df['date'], unit='ms').dt.tz_localize(pytz.UTC).dt.tz_convert('America/Argentina/Buenos_Aires')
