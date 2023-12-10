@@ -2,11 +2,6 @@
 import pandas as pd
 
 
-
-
-
-
-
 def rsi(df, periods = 14, ema = True):
     """
     Returns a pd.Series with the relative strength index.
