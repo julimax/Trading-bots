@@ -28,6 +28,8 @@ def entradas(df_close, ema200, ema9):
                 stop_loss = ema200[i + 2]
                 profit = entry + (entry - stop_loss)
                 plt.scatter(i + 2, entry, color='orange', zorder=3, s=5)
+                plt.scatter(i + 2, profit, color='green', zorder=3, s=5)
+                plt.scatter(i + 2, stop_loss, color='red', zorder=3, s=5)
                 print('trade entry long: ' + str(entry) + ' stop loss: ' + str(stop_loss) + ' profit: ' + str(profit))
                
 
@@ -59,6 +61,8 @@ def entradas(df_close, ema200, ema9):
                 stop_loss = ema200[i + 2]
                 profit = entry - (stop_loss - entry)
                 plt.scatter(i + 2, entry, color='orange', zorder=3, s=5)
+                plt.scatter(i + 2, profit, color='green', zorder=3, s=5)
+                plt.scatter(i + 2, stop_loss, color='red', zorder=3, s=5)
                 print('trade entry short: ' + str(entry) + ' stop loss: ' + str(stop_loss) + ' profit: ' + str(profit))
                
 
