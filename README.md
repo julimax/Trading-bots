@@ -38,6 +38,13 @@ This Python script is designed to perform financial analysis by calculating and 
 - `calcular_entradas(df_close, ema200, ema20, ema9)`: Determines the entry, stop loss, and profit points.
 - `graficar_entradas(entry_points, stop_loss_points, profit_points)`: Visualizes the entry points on the graph.
 
+## trades image
+
+The images trades are like
+
+![arquitectura](laboratorio/asd.png)
+
 ## Note
 
 This script is intended for educational and research purposes only. It should not be used as financial advice or for real trading without proper risk assessment and consultation with a financial expert.
+

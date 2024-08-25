@@ -45,4 +45,5 @@ def graficar_entradas(entry_points, stop_loss_points, profit_points):
     plt.title('Gráfico de Estrategia de Trading')
     plt.xlabel('Tiempo')
     plt.ylabel('Precio')
+    plt.savefig('asd.png', dpi=900)
     plt.show()
