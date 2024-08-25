@@ -17,9 +17,9 @@ def entradas(df_close, ema200, ema9):
     profit = 500000
     for i in range(len(df_close) - 3):
         
-        print(df_close[i+2])        
+        #print(df_close[i+2])        
         
-        if df_close[i+2] > ema200[i+2] and on_trade == False:
+        if df_close[i+2] > ema200[i+2] and on_trade == False and df_close[i+2] < (ema200[i+2] * 1.03):
 
             if ema9[i] > ema9[i+1] and ema9[i+2] > ema9[i+1]:
                 count = count + 1
@@ -51,8 +51,8 @@ def entradas(df_close, ema200, ema9):
     profit = 0
     for i in range(len(df_close) - 3):
 
-        print(df_close[i+2])    
-        if df_close[i+2] < ema200[i+2] and on_trade == False:
+        #print(df_close[i+2])    
+        if df_close[i+2] < ema200[i+2] and on_trade == False and df_close[i+2] > (ema200[i+2] * 1.03):
 
             if ema9[i] < ema9[i+1] and ema9[i+2] < ema9[i+1]:
                 count = count + 1

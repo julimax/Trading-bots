@@ -24,7 +24,7 @@ def rsi(df, periods = 14, ema = True):
     rsi = ma_up / ma_down
     
     rsi = 100 - (100/(1 + rsi))
-    rsiLast =  rsi[209]
+
     return rsi
 
 
